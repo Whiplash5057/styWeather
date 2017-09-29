@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather, setLogin } from '../actions/index';
+import { fetchWeather, setLogin, emptyWeather } from '../actions/index';
 import * as firebase from 'firebase';
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -99,6 +99,7 @@ class SearchBar extends Component {
             this.props.setLogin(sendToActionCreator, () => {
                 // console.log('done');
             });
+            this.props.emptyWeather();
 
             this.context.router.push('/')
 
@@ -152,4 +153,4 @@ function mapStateToProps({ authenticated }){
       
 }
 
-export default connect(mapStateToProps, { fetchWeather, setLogin })(SearchBar);
+export default connect(mapStateToProps, { fetchWeather, setLogin, emptyWeather })(SearchBar);

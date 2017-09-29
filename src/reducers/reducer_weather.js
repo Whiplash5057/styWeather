@@ -1,4 +1,4 @@
-import { FETCH_WEATHER } from '../actions/index.js';
+import { FETCH_WEATHER, EMPTY_WEATHER } from '../actions/index.js';
 
 export default function(state = [], action) {
   // console.log('Action received', action);
@@ -18,6 +18,9 @@ export default function(state = [], action) {
         return state;
       }
       
+      break;
+    case EMPTY_WEATHER:
+      return [];
       break;
   }
   return state;

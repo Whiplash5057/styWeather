@@ -1,6 +1,6 @@
 # styWeather
 
-Check out the app by clicking [here](https://github.com/Whiplash5057/styWeather)
+Check out the app by clicking [here](https://styweather.herokuapp.com/)
 
 #### 
 Checkout this repo, install dependencies, then start the gulp process with the following:

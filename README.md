@@ -1,12 +1,12 @@
 # styWeather
 
-Check out the app by clicking [here](https://www.udemy.com/react-redux/)?
+Check out the app by clicking [here](https://github.com/Whiplash5057/styWeather)
 
 #### 
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone https://github.com/Whiplash5057/styWeather.git
+> git clone git@github.com:Whiplash5057/styWeather.git
 > cd stylabs
 > npm install
 > npm start

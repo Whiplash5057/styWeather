@@ -10,7 +10,14 @@ export default function(state = [], action) {
     case FETCH_WEATHER:
 
       // return state.concat([action.payload.data]);
-      return [action.payload.data, ...state];
+      if (typeof(action.payload.data) == "object"){
+        // console.log('yes');
+        return [action.payload.data, ...state];
+      } else {
+        // console.log('no');
+        return state;
+      }
+      
       break;
   }
   return state;

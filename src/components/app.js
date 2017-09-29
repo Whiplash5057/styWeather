@@ -17,6 +17,12 @@ import * as firebase from 'firebase';
 
 
 class App extends Component {
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  }
+
+
   constructor(props) {
     super(props);
 
@@ -76,7 +82,7 @@ class App extends Component {
           });
 
         }).catch((error) => {
-          // console.log(error);
+          console.log(error);
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;

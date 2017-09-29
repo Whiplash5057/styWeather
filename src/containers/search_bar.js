@@ -7,6 +7,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 
 class SearchBar extends Component {
+
+
+    static contextTypes = {
+        router: React.PropTypes.object.isRequired
+      }
+
+
     constructor(props) {
         super(props);
     
@@ -37,7 +44,7 @@ class SearchBar extends Component {
             geocoder.geocode({'location': latlng}, (results, status) => {
                 if (status === 'OK') {
                     if (results[0]) {
-                        console.log(results[0].formatted_address);
+                        // console.log(results[0].formatted_address);
                         this.setState({ term: results[0].formatted_address });
                     }
                 }
@@ -64,15 +71,19 @@ class SearchBar extends Component {
     onInputChange(event) {
         
         this.setState({ term: event.target.value });
+        // console.log(this.state.term);
     }
     
     onFormSubmit(event) {
         event.preventDefault();
     
         //fetch weather data
+        let inputVal = document.querySelector('.pac-input');
+        // console.log(inputVal.value);
         if(this.state.term.length > 0) {
-            this.props.fetchWeather(this.state.term);
+            this.props.fetchWeather(inputVal.value);
             this.setState({ term: '' });
+            inputVal.value = '';
         }
     }
 
@@ -89,7 +100,7 @@ class SearchBar extends Component {
                 // console.log('done');
             });
 
-            this.props.router.push('/')
+            this.context.router.push('/')
 
             // console.log('signout success')
           }, function(error) {

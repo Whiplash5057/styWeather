@@ -7,8 +7,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 
 ```
 > git clone git@github.com:Whiplash5057/styWeather.git
-> cd stylabs
-> npm install
+> cd styWeather
+> sudo npm install
 > npm start
 ```
 

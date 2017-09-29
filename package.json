@@ -26,12 +26,18 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
+    "firebase": "^4.4.0",
     "lodash": "^3.10.1",
-    "react": "^0.14.3",
+    "react": "^0.14.9",
     "react-dom": "^0.14.3",
-    "react-redux": "4.3.0",
+    "react-redux": "^4.3.0",
+    "react-responsive-modal": "^1.7.1",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "react-router-dom": "^4.2.2",
+    "react-sparklines": "^1.6.0",
+    "redux": "^3.0.4",
+    "redux-promise": "^0.5.3"
   }
 }

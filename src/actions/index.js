@@ -10,9 +10,14 @@ const API_KEY = '69fd287a66b890c348d37fe6bc772f13';
 const ROOT_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 
-export function fetchWeather(city) {
+export function fetchWeather(city, callbackErr) {
   const URL = `${ROOT_URL}&q=${city}`;
   const request = axios.get(URL);
+  request.then(response => {
+    console.log('response', response);
+  }).catch(error => {
+    callbackErr();
+  });
 
   // console.log('Request:', request);
   return {

@@ -14,7 +14,7 @@ class WeatherList extends Component {
         const { lon, lat } = cityData.city.coord;
         // console.log(temp);
         return (
-          <tr key={ cityData.city.coord.lat }>
+          <tr key={ cityData.city.coord.lat } className="fade-in">
             <td> <GoogleMap lat={lat} lon={lon} /> </td>
             <td><Chart data={temp} color='orange' units='K'/></td>
             <td><Chart data={pressure} color='green' units='hPa' /></td>

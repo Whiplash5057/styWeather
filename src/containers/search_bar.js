@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather, setLogin, emptyWeather } from '../actions/index';
 import * as firebase from 'firebase';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Modal from 'react-responsive-modal';
 
 
 class SearchBar extends Component {
@@ -17,7 +18,10 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
     
-        this.state = { term: '' };
+        this.state = { 
+            term: '',
+            open: false,
+         };
     
         //because the context of the onInputChange will change to the Component
         //we will change the context to the class context(component context)
@@ -81,7 +85,10 @@ class SearchBar extends Component {
         let inputVal = document.querySelector('.pac-input');
         // console.log(inputVal.value);
         if(this.state.term.length > 0) {
-            this.props.fetchWeather(inputVal.value);
+            this.props.fetchWeather(inputVal.value, ()=> {
+                console.log('error');
+                this.onOpenModal();
+            });
             this.setState({ term: '' });
             inputVal.value = '';
         }
@@ -110,9 +117,29 @@ class SearchBar extends Component {
           });
     }
 
+    onOpenModal = () => {
+        this.setState({ open: true });
+      };
+    
+      onCloseModal = () => {
+        this.setState({ open: false });
+      };
+    
+
     render() {
+        const { open } = this.state;
+
         return (
             <div>
+                <Modal open={open} onClose={this.onCloseModal} little >
+                    <br/>
+                    <div className="dialogAlertText" >
+                        <div className="leftAlignUls">The city you have entered doesn't exists. <br/>
+                        Make sure you've got the right city name.
+                        </div>
+                    </div>
+                </Modal>
+
                 <div className="headerEff">
                     <div className="profile">
                         <span className="profile_image"><img src={ this.props.imageLink } /></span>

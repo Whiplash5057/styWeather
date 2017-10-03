@@ -70,14 +70,14 @@ canvas {
 .loginForm__largeLogoText {
     font-size: 75px;
     text-align: center;
-    color: #000;
-    text-shadow: 2px 0px 10px #000;
+    color: #fff;
+    text-shadow: 2px 0px 10px #fff;
 }
 .loginForm__smallLogoText {
   font-size: 30px;
   text-align: center;
-  color: #000;
-  text-shadow: 2px 0px 10px #000;
+  color: #fff;
+  text-shadow: 2px 0px 10px #fff;
 }
 .loginForm__loginBtns {
     display: -webkit-box;
@@ -100,7 +100,8 @@ canvas {
     
 }
 .loginBtn__github {
-    background-color:#000;
+    background-color:#fff;
+    color: #000;
 }
 .loginBtn__google, .loginBtn__github{
     margin: 20px;

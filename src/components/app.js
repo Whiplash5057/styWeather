@@ -77,7 +77,7 @@ class App extends Component {
 
           this.props.setLogin(sendToActionCreator, () => {
               setTimeout(() => { 
-                this.props.history.push('/getweather');
+                this.context.router.push('/getweather')
               }, 5000);
           });
 
@@ -153,9 +153,9 @@ class App extends Component {
     };
 
     const colors = [
-      '#000',
-      '#000',
-      '#000'
+      '#fff',
+      '#fff',
+      '#fff'
     ];
 
 
@@ -257,7 +257,7 @@ class App extends Component {
     function animate() {
       requestAnimationFrame(animate);
       // c.clearRect(0, 0, canvas.width, canvas.height);
-      c.fillStyle = 'rgba(255, 255, 255, 0.05)';
+      c.fillStyle = 'rgba(0, 0, 0, 0.05)';
       c.fillRect(0, 0, canvas.width, canvas.height);
 
       // c.fillText('HTML CANVAS BOILERPLATE', mouse.x, mouse.y);
